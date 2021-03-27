@@ -21,5 +21,13 @@
 
         exit(json_encode(array('id' => $uID)));
     }
-  }
->
+    $sql = $conn->query("SELECT id FROM stars");
+    $numR = $sql->num_rows;
+
+    $sql = $conn->query("SELECT SUM(rateIndex) AS total FROM stars");
+    $rData = $sql->fetch_array();
+    $total = $rData['total'];
+
+    $avg = $total / $numR;
+?>
+
