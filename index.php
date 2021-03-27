@@ -98,3 +98,14 @@ var ratedIndex = -1, uID = 0;
                }
             });
         }
+      function setStars(max) {
+            for (var i=0; i <= max; i++)
+                $('.fa-star:eq('+i+')').css('color', 'green');
+        }
+
+        function resetStarColors() {
+            $('.fa-star').css('color', 'white');
+        }
+    </script>
+</body>
+</html>
