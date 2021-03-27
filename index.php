@@ -82,3 +82,19 @@ var ratedIndex = -1, uID = 0;
                     setStars(ratedIndex);
             });
         });
+
+        function saveToTheDB() {
+            $.ajax({
+               url: "index.php",
+               method: "POST",
+               dataType: 'json',
+               data: {
+                   save: 1,
+                   uID: uID,
+                   ratedIndex: ratedIndex
+               }, success: function (r) {
+                    uID = r.id;
+                    // localStorage.setItem('uID', uID);
+               }
+            });
+        }
